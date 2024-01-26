@@ -1,0 +1,10 @@
+{% extends "pokemon_analysis/base.html" %}
+{% block title %}Grass Type Pokémon{% endblock %}
+{% block content %}
+  <h2>Grass Type Pokémon</h2>
+  <ul>
+    {% for pokemon in grass_pokemon %}
+      <li>{{ pokemon.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

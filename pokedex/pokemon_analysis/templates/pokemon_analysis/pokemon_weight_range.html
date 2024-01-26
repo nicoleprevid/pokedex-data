@@ -1,0 +1,10 @@
+{% extends "pokemon_analysis/base.html" %}
+{% block title %}Pokémon Weight Range{% endblock %}
+{% block content %}
+  <h2>Pokémon Weight Range (30 - 80)</h2>
+  <ul>
+    {% for pokemon in filtered_pokemon %}
+      <li>{{ pokemon.name }} - Weight: {{ pokemon.weight }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

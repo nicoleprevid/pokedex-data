@@ -1,0 +1,25 @@
+{% extends "pokemon_analysis/base.html" %}
+{% block title %}
+first 50 pokemons
+{% endblock %}
+{% block content %}
+  <h2>First 50 Pokemon</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Type(s)</th>
+      <th>Height</th>
+      <th>Weight</th>
+    </tr>
+    {% for pokemon in pokemon_list %}
+      <tr>
+        <td>{{ pokemon.id }}</td>
+        <td>{{ pokemon.name }}</td>
+        <td>{{ pokemon.types|join:", " }}</td>
+        <td>{{ pokemon.height }}</td>
+        <td>{{ pokemon.weight }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
