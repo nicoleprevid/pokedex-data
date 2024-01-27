@@ -24,8 +24,7 @@ To run the Pokémon Analysis Project locally, follow these steps:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/pokemon-analysis.git
-cd pokemon-analysis
+git clone (https://github.com/nicoleprevid/pokedex-data.git)
 ```
 
 ### 2. Create a Virtual Environment
