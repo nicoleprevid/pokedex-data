@@ -1,0 +1,10 @@
+{% extends "pokemon_analysis/base.html" %}
+{% block title %}Flying Type Pokémon (Height > 10){% endblock %}
+{% block content %}
+<h2>Flying Type Pokémon - taller than 10</h2>
+  <ul>
+    {% for pokemon in flying_tall_pokemon %}
+      <li>{{ pokemon.name }} - Height: {{ pokemon.height }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

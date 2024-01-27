@@ -1,0 +1,10 @@
+{% extends "pokemon_analysis/base.html" %}
+{% block title %}Inverted Pokémon Names{% endblock %}
+{% block content %}
+  <h2>Inverted Pokémon Names</h2>
+  <ul>
+    {% for pokemon in inverted_pokemon_names %}
+      <li>{{ pokemon.original_name }} -> {{ pokemon.inverted_name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

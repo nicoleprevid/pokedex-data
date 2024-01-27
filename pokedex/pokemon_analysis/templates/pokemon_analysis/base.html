@@ -1,41 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {% block title %}
-        Pokemon Analysis
-      {% endblock %}
+        {% block title %}
+        Pokedex Data
+        {% endblock %}
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" />
-  </head>
-  <body>
+    <style>
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #b6d3d3;
+            /* Azulzinho */
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            margin-top: 80px;
+
+        }
+
+        /* Estilo para a página de carregamento */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loading p {
+            font-size: 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pokemon Analysis</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'list_first_50' %}">First 50</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'pokemon_weight_range' %}">Weight between 30 and 80</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'grass_type_pokemon' %}">All Type Grass</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'flying_type_tall_pokemon' %}">All Type Flying</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'inverted_names' %}">All inverted Names</a>
-          </li>
-        </ul>
-      </div>
+        <a class="navbar-brand" href="">Pokedex Data</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <img src="https://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-Download-Image.png"
+                style="height: 70px;" />
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list_first_50' %}">First 50</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pokemon_weight_range' %}">Weight between 30 and 80</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'grass_type_pokemon' %}">All Type Grass</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'flying_type_tall_pokemon' %}">All Type Flying taller than 10</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inverted_names' %}">All inverted Names</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="container">{% block content %} {% endblock %}</div>
+
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" ></script>
-  </body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
