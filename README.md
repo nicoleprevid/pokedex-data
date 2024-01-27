@@ -68,8 +68,8 @@ Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser to access
 
 ## Project Structure
 
-- **pokedex/pokedex:** Django project directory.
-  - **pokedex/pokemon_analysis:** Django app directory.
+- **pokedex/:** Django project directory.
+  - **pokemon_analysis/:** Django app directory.
     - **templates/:** HTML templates.
 
 ## Notes
